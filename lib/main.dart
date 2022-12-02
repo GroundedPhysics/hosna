@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'dart:async';
 
-void main() {
+Future<void> main() async {
+  const supabaseUrl = 'https://cdtdcfqxcbwncyvkcrui.supabase.co';
+  const supabaseKey = String.fromEnvironment(
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkdGRjZnF4Y2J3bmN5dmtjcnVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Njk5NjMxOTMsImV4cCI6MTk4NTUzOTE5M30.ZgYVE029marhMdOjzZy9JYQ_c_Ml9YQ5LUrWu-Eqlas');
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Supabase.initialize(
+    url: supabaseUrl,
+    anonKey: supabaseKey,
+  );
+
   runApp(const MyApp());
 }
 
@@ -49,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'برنامه سازی با استاد فلاتر از این چنل دریافت کنید',
+              'د',
               style: TextStyle(fontSize: 26.0),
             ),
             Text(
